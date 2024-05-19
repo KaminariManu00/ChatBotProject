@@ -32,7 +32,73 @@ def main():
     # Call memory management functions before starting Streamlit app
     #min_memory_available = 1 * 1024 * 1024 * 1024  # 1GB
     clear_gpu_memory()
-    #wait_until_enough_gpu_memory(min_memory_available)
+    logo_chat = "/Users/luigibarbato/Desktop/Programmi/Programmi-magistrale/ChatBotProject/logo/logo_chat.png"
+    logo_federico_ii = "/Users/luigibarbato/Desktop/Programmi/Programmi-magistrale/ChatBotProject/logo/logo_federico_ii.png"
+
+# Crea due colonne per le immagini
+    col1, col2 = st.columns(2)
+
+# Mostra le immagini
+    col1.image(logo_chat, width=300, output_format='PNG', use_column_width=False)
+    col2.image(logo_federico_ii, width=300, output_format='PNG', use_column_width=False)
+    
+
+    # Stili CSS personalizzati per il tema
+    st.markdown("""
+    <style>
+    .main {
+        background-color: #0E1117;
+        color: white;
+    }
+    .stButton>button {
+        background-color: #f63366;
+        color: white;
+    }
+    .stTitle {
+        font-family: 'Roboto', sans-serif;
+        font-size: 2.5em;
+        color: white;
+        text-align: center;
+        margin-bottom: 0;
+    }
+    .stHeader {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.5em;
+        color: white;
+    }
+    .stExpander {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1em;
+        color: white;
+    }
+    .stMarkdown {
+        font-family: 'Roboto', sans-serif;
+        color: white;
+    }
+    .stChatMessage {
+        background-color: #0E1117;
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #cccccc;
+    }
+    .stChatInput {
+        background-color: #0E1117;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+
+    st.markdown("<h1 class='stTitle'>RAG Bot 🤖</h1>", unsafe_allow_html=True)
+
+    # Aggiungi descrizione dell'app
+    st.markdown("""
+    <div style='text-align: center; margin-bottom: 30px;'>
+        <p style='font-family: "Roboto", sans-serif; font-size: 1.2em; color: white;'>
+            Benvenuto nel Chatbot RAG! Sono l'assistente della legislazione italiana!
+        </p>
+    </div>
+    """, unsafe_allow_html=True)
+    #wait_until_enough_gpu_memory()
 
     display_chatbot_page()
    
