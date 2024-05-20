@@ -3,15 +3,11 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.embeddings import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 import streamlit as st
-from langchain.prompts import ChatPromptTemplate, PromptTemplate
-from langchain_core.output_parsers import StrOutputParser
+from langchain.prompts import PromptTemplate
 from langchain_community.chat_models import ChatOllama
-from langchain_community.embeddings import OllamaEmbeddings
-from langchain_core.runnables import RunnablePassthrough
 from langchain.retrievers.multi_query import MultiQueryRetriever
 from langchain.chains import ConversationalRetrievalChain
 from langchain.memory import ConversationBufferWindowMemory
-from transformers import AutoTokenizer, AutoModel
 
 def read_pdf(file):
     document = ""
@@ -129,11 +125,20 @@ def prepare_rag_llm(llm_model, vector_store_list):
     # Return the chatbot
     return qa_conversation
 
-
 def generate_answer(question):
-    # Define a larger prompt that includes the user's question
-    larger_prompt = f"""You are an AI language model assistant. Your task is to answer the following question based ONLY on the given context. Try to provide a comprehensive and accurate answer.
-    You have to answer in Italian.
+    # Get the history of questions and answers
+    history = st.session_state.history
+
+    # Format the history into a string
+    history_str = ""
+    for qa in history:
+        history_str += f"{qa['role']}: {qa['content']}\n"
+
+    # Define a larger prompt that includes the user's question and the history
+    larger_prompt = f"""You are an AI language model assistant. Your task is to answer the following question based on the given context and previous questions and answers. Try to provide a comprehensive and accurate answer.
+    You have to answer in Italian. Give the tile of the documents you use from the context to answer.
+    History:
+    {history_str}
     Question: {question}
     """
 
