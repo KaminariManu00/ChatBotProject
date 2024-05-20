@@ -13,8 +13,8 @@ def clear_gpu_memory():
 
 def main():
     clear_gpu_memory()
-    logo_chat = "logo\logo_chat.png"
-    logo_federico_ii = "logo\logo_federico_ii.png"
+    logo_chat = "logo/logo_chat.png"
+    logo_federico_ii = "logo/logo_federico_ii.png"
 
 # Crea due colonne per le immagini
     col1, col2 = st.columns(2)
