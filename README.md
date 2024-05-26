@@ -31,7 +31,7 @@ Il dataset è stato suddiviso in sottocartelle ognuna contente file pdf su diffe
     1.	Normazione dal 1948 al 2024:
         1.	Atti pari opportunità - empowerament femminile e pnrr: 24 documenti .pdf ed 1 .docx
         2.	Leggi parità di genere - diritti sociali: 23 documenti .pdf
-    1.	Proposte di legge XVIII e XIX Leg: 
+    2.	Proposte di legge XVIII e XIX Leg: 
         1.	Proposte di legge Leg XVII: 19 documenti .pdf ed 1 .docx 
         2.	Proposte di legge Leg XIX: 5 documenti .pdf
     3.	Proposte di iniziativa legislativa popolare dal 2001 al 2024: 4 documenti .pdf
