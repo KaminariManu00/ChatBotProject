@@ -28,8 +28,8 @@ Il Dataset fornito è stato suddiviso in quattro sezioni, ognuna delle quali con
 Per la realizzazione del prototipo, abbiamo concentrato la nostra selezione sulle tematiche dell'empowerment femminile, dei diritti sociali e della regolazione attuativa del PNRR all'interno dell'area dell'uguaglianza di genere.
 Il dataset è stato suddiviso in sottocartelle ognuna contente file pdf su differenti argomenti. Di seguito la struttura:
 1.	Normazione: 
-    a.	Normazione dal 1948 al 2024:
-        i.	Atti pari opportunità - empowerament femminile e pnrr: 24 documenti .pdf ed 1 .docx
+    1.1.	Normazione dal 1948 al 2024:
+        1.1.1.	Atti pari opportunità - empowerament femminile e pnrr: 24 documenti .pdf ed 1 .docx
         ii.	Leggi parità di genere - diritti sociali: 23 documenti .pdf
     b.	Proposte di legge XVIII e XIX Leg: 
         i.	Proposte di legge Leg XVII: 19 documenti .pdf ed 1 .docx 
