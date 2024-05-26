@@ -48,12 +48,12 @@ Nel  nome file dei rispettivi documenti, si è stato riportato se la proposta è
 Questo approccio multidimensionale consente di accedere a una vasta gamma di informazioni legislative e giuridiche rilevanti per la promozione dell'uguaglianza di genere e per la predisposizione di proposte legislative mirate e informate.
 
 ### 2. ChatBot 
-Il modello si basa su chiamate all'API di llama3 attraverso una maipolazione del prompt, in prima istanza: 
+Il modello si basa su chiamate all'API di llama3 attraverso una manipolazione del prompt: 
 1. Attraverso la funzione `PromptTemplate()` abbiamo modificato il prompt in modo tale da permettere la generazione di cinque diverse interpretazioni della domanda dell'utente da presentare al modello. Questo approccio permette di superare eventuali errori di battitura o domande poco chiare.
 2. Definizione del `MultiQueryRetriever.from_llm()`, che permette di usare le 5 domande per recuperare un set di documenti rilevanti per ogni documento e prende un unione di tutte le queries per avere un set più grande di documenti rilevanti, al fine di superare le limitazioni delle metriche di similarità.
 3. Definizione della memoria, attraverso `ConversationBufferWindowMemory()`, che permette di creare una lista delle interazioni. Esso usa le ultime k=4 interazioni, e permette di tenerne traccia senza rendere la finestra di memoria troppo grande. 
 4. Creazione del chat_bot attraverso `ConversationalRetrievalChain.from_llm()`.
-5. Definzione del prompt finale per ottnere la risposta, tale prompt include sia l'ultima domanda dell'utente sia la storia recente conservata nella memoria. 
+5. Definizione del prompt finale per ottenere la risposta, tale prompt include sia l'ultima domanda dell'utente sia la storia recente conservata nella memoria. 
 
 ## Credits 
 Emanuele Cuono Amoruso,
