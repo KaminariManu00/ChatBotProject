@@ -38,13 +38,13 @@ Il dataset è stato suddiviso in sottocartelle ognuna contente file pdf su diffe
 La selezione delle proposte di legge di iniziativa popolare (indicata con la lettera "c") è stata effettuata considerando l'identità nella redazione di un articolato normativo, indipendentemente dal soggetto proponente, che potrebbero essere cittadini, parlamentari o altri soggetti legittimati ai sensi dell'articolo 71 della Costituzione. È importante che lo strumento risponda alle esigenze specifiche dei deputati e delle deputate.
 Nel  nome file dei rispettivi documenti, si è stato riportato se la proposta è stata approvata o no, dato che potrebbe essere utile per verificare la verosimiglianza dell’approvazione di una proposta di legge.
 3.	Giurisprudenza:
-    a.	Sent. Corte costituzionale: 18 documenti .pdf
-    b.	Sent. Corte di giustizia UE: 9 documenti .pdf
-    c.	1 documento .docx sommario della cartella Giurisprudenza
+    1.	Sent. Corte costituzionale: 18 documenti .pdf
+    2.	Sent. Corte di giustizia UE: 9 documenti .pdf
+    3.	1 documento .docx sommario della cartella Giurisprudenza
 4.	Dossier: 31 documenti .pdf 
 5.	Atti indirizzo e controllo Parlamento:
-    a.	Atti indirizzo e controllo XVIII Legislatura: 8 documenti .pdf
-    b.	Atti indirizzo e controllo XIX legislatura: 12 documenti .pdf
+    1.	Atti indirizzo e controllo XVIII Legislatura: 8 documenti .pdf
+    2.	Atti indirizzo e controllo XIX legislatura: 12 documenti .pdf
 Questo approccio multidimensionale consente di accedere a una vasta gamma di informazioni legislative e giuridiche rilevanti per la promozione dell'uguaglianza di genere e per la predisposizione di proposte legislative mirate e informate.
 
 ### 2. ChatBot 
