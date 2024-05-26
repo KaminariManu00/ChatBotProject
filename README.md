@@ -27,22 +27,22 @@ Il Dataset fornito è stato suddiviso in quattro sezioni, ognuna delle quali con
 ### 1. Dataset:
 Per la realizzazione del prototipo, abbiamo concentrato la nostra selezione sulle tematiche dell'empowerment femminile, dei diritti sociali e della regolazione attuativa del PNRR all'interno dell'area dell'uguaglianza di genere.
 Il dataset è stato suddiviso in sottocartelle ognuna contente file pdf su differenti argomenti. Di seguito la struttura:
-1.	Normazione: 
-    1.1.	Normazione dal 1948 al 2024:
-        1.1.1.	Atti pari opportunità - empowerament femminile e pnrr: 24 documenti .pdf ed 1 .docx
-        ii.	Leggi parità di genere - diritti sociali: 23 documenti .pdf
-    b.	Proposte di legge XVIII e XIX Leg: 
-        i.	Proposte di legge Leg XVII: 19 documenti .pdf ed 1 .docx 
-        ii.	Proposte di legge Leg XIX: 5 documenti .pdf
-    c.	Proposte di iniziativa legislativa popolare dal 2001 al 2024: 4 documenti .pdf
+1.	Normazione:
+    1.	Normazione dal 1948 al 2024:
+        1.	Atti pari opportunità - empowerament femminile e pnrr: 24 documenti .pdf ed 1 .docx
+        2.	Leggi parità di genere - diritti sociali: 23 documenti .pdf
+    1.	Proposte di legge XVIII e XIX Leg: 
+        1.	Proposte di legge Leg XVII: 19 documenti .pdf ed 1 .docx 
+        2.	Proposte di legge Leg XIX: 5 documenti .pdf
+    3.	Proposte di iniziativa legislativa popolare dal 2001 al 2024: 4 documenti .pdf
 La selezione delle proposte di legge di iniziativa popolare (indicata con la lettera "c") è stata effettuata considerando l'identità nella redazione di un articolato normativo, indipendentemente dal soggetto proponente, che potrebbero essere cittadini, parlamentari o altri soggetti legittimati ai sensi dell'articolo 71 della Costituzione. È importante che lo strumento risponda alle esigenze specifiche dei deputati e delle deputate.
 Nel  nome file dei rispettivi documenti, si è stato riportato se la proposta è stata approvata o no, dato che potrebbe essere utile per verificare la verosimiglianza dell’approvazione di una proposta di legge.
-2.	Giurisprudenza:
+3.	Giurisprudenza:
     a.	Sent. Corte costituzionale: 18 documenti .pdf
     b.	Sent. Corte di giustizia UE: 9 documenti .pdf
     c.	1 documento .docx sommario della cartella Giurisprudenza
-3.	Dossier: 31 documenti .pdf 
-4.	Atti indirizzo e controllo Parlamento:
+4.	Dossier: 31 documenti .pdf 
+5.	Atti indirizzo e controllo Parlamento:
     a.	Atti indirizzo e controllo XVIII Legislatura: 8 documenti .pdf
     b.	Atti indirizzo e controllo XIX legislatura: 12 documenti .pdf
 Questo approccio multidimensionale consente di accedere a una vasta gamma di informazioni legislative e giuridiche rilevanti per la promozione dell'uguaglianza di genere e per la predisposizione di proposte legislative mirate e informate.
