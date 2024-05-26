@@ -55,3 +55,7 @@ Il modello si basa su chiamate all'API di llama3 attraverso una maipolazione del
 4. Creazione del chat_bot attraverso `ConversationalRetrievalChain.from_llm()`.
 5. Definzione del prompt finale per ottnere la risposta, tale prompt include sia l'ultima domanda dell'utente sia la storia recente conservata nella memoria. 
 
+## Credits 
+Emanuele Cuono Amoruso
+Luigi Barbato
+Roberto La Rovere
