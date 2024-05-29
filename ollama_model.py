@@ -12,7 +12,7 @@ from langchain.memory import ConversationBufferWindowMemory
 def read_pdf(file):
     document = ""
 
-    #Estrae il testo per ogni pagina e ritorna il testo concatenando tutte le stringhe del pdf
+    # Estrae il testo per ogni pagina e ritorna il testo concatenando tutte le stringhe del pdf
     reader = PdfReader(file)
     for page in reader.pages:
         document += page.extract_text()
@@ -20,7 +20,7 @@ def read_pdf(file):
     return document
 
 def read_txt(file):
-    #Aumenta la leggibilità del documento, aggiungendo uno spazio prima di ogni newline e return
+    # Aumenta la leggibilità del documento, aggiungendo uno spazio prima di ogni newline e return
     document = str(file.getvalue())
     document = document.replace("\\n", " \\n ").replace("\\r", " \\r ")
 
@@ -29,8 +29,8 @@ def read_txt(file):
 
 def split_doc(document, chunk_size, chunk_overlap):
 
-    #vengono settati i parametri legati al chunck_size e chunck_overlap. Il TextSplitter scelto è un RecursiveCharacterTextSplitter
-    #Il valore di ritorno sono i chunck del documento originale
+    # Vengono settati i parametri legati al chunck_size e chunck_overlap. Il TextSplitter scelto è un RecursiveCharacterTextSplitter
+    # Il valore di ritorno sono i chunck del documento originale
 
     splitter = RecursiveCharacterTextSplitter(
         chunk_size=chunk_size,
@@ -43,20 +43,20 @@ def split_doc(document, chunk_size, chunk_overlap):
 
 def embedding_storing(split, create_new_vs, existing_vector_store, new_vs_name):
 
-    #Funzione usata per gestire e conservare embeddings dei chunks di testo
+    # Funzione usata per gestire e conservare embeddings dei chunks di testo
 
-    #Controllo per sapere se deve essere creato un nuovo vector store
+    # Controllo per sapere se deve essere creato un nuovo vector store
     if create_new_vs is not None:
-        #Caricamento dell'instructor degli embedding da HuggingFace
+        # Caricamento dell'instructor degli embedding da HuggingFace
         instructor_embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2", 
                                            model_kwargs={'device': 'cpu'},
                                            encode_kwargs = {'normalize_embeddings': True})
 
-        #Creazione di un indice FAISS dai chank di testo usando gli embedding caricati
+        # Creazione di un indice FAISS dai chank di testo usando gli embedding caricati
         db = FAISS.from_documents(split, instructor_embeddings)
 
         if create_new_vs == True:
-            #Salva gli indici FAISS creati in una directory locale
+            # Salva gli indici FAISS creati in una directory locale
             db.save_local("vector store/" + new_vs_name)
         else:
             # Carica indici FAISS già presenti
@@ -99,16 +99,16 @@ def prepare_rag_llm(llm_model, vector_store_list):
     )
 
     # Definizione del MultiQueryRetriever, che permette di usare le 5 domande per recuperare un set di documenti rilevanti per
-    #ogni documento e prende un unione di tutte le queries per avere un set più grande di documenti rilevanti, al fine di superare
-    #le limitazioni delle metriche di similarità. 
+    # ogni documento e prende un unione di tutte le queries per avere un set più grande di documenti rilevanti, al fine di superare
+    # le limitazioni delle metriche di similarità. 
     retriever = MultiQueryRetriever.from_llm(
         loaded_db.as_retriever(), 
         llm,
         prompt=QUERY_PROMPT
     )
 
-    #Definizione della memoria, cioè una lista delle interazioni. Esso usa le ultime k = 4 interazioni, e permette di tenerne traccia
-    #senza rendere la finestra di memoria troppo grande.
+    # Definizione della memoria, cioè una lista delle interazioni. Esso usa le ultime k = 4 interazioni, e permette di tenerne traccia
+    # senza rendere la finestra di memoria troppo grande.
     memory = ConversationBufferWindowMemory(
         k=4,
         memory_key="chat_history",
@@ -116,7 +116,7 @@ def prepare_rag_llm(llm_model, vector_store_list):
         return_messages=True,
     )
 
-    #Creazione del chatbot
+    # Creazione del chatbot
     qa_conversation = ConversationalRetrievalChain.from_llm(
         llm=llm,
         chain_type="stuff",
@@ -132,13 +132,15 @@ def generate_answer(question):
     # Cronologia delle domande e delle risposte
     history = st.session_state.history
 
-    #Formattazione della cronologia in una stringa, al fine di usarlo nel prompt della domanda
+    # Formattazione della cronologia in una stringa, al fine di usarlo nel prompt della domanda
     history_str = ""
     for qa in history:
         history_str += f"{qa['role']}: {qa['content']}\n"
 
-    #Definizione di un prompt più grande che include la domanda dell'utente e la cronologia
-    larger_prompt = f"""You are an AI language model assistant. Your task is to answer the following question based on the given context and previous questions and answers. Try to provide a comprehensive and accurate answer.
+    # Definizione di un prompt più grande che include la domanda dell'utente e la cronologia
+    larger_prompt = f"""You are an AI language model assistant.
+    Your task is to answer the following question based on the given context and previous questions and answers.
+    Try to provide a comprehensive and accurate answer.
     You have to answer in Italian. Give the tile of the documents you use from the context to answer.
     History:
     {history_str}
