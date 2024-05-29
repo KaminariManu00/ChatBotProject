@@ -29,7 +29,7 @@ def read_txt(file):
 
 def split_doc(document, chunk_size, chunk_overlap):
 
-    # Vengono settati i parametri legati al chunck_size e chunck_overlap. Il TextSplitter scelto è un RecursiveCharacterTextSplitter
+    # Vengono settati i parametri legati al chunck_size e chunck_overlap. Il TextSplitter scelto è un RecursiveCharacterTextSplitter.
     # Il valore di ritorno sono i chunck del documento originale
 
     splitter = RecursiveCharacterTextSplitter(
@@ -65,7 +65,7 @@ def embedding_storing(split, create_new_vs, existing_vector_store, new_vs_name):
                 instructor_embeddings,
                 allow_dangerous_deserialization=True
             )
-            # Merge dei dui indici
+            # Merge dei due indici
             load_db.merge_from(db)
             load_db.save_local("vector store/" + new_vs_name)
 
@@ -85,8 +85,8 @@ def prepare_rag_llm(llm_model, vector_store_list):
     local_model = f"{llm_model}"
     llm = ChatOllama(model=local_model)
 
-    # Definizione del prompt. Questo prompt consente di generare cinque diverse interpretazioni della domanda dell'utente
-    # da presentare al modello. Questo approccio permette di superare eventuali errori di battitura o domande poco chiare.
+    # Definizione del prompt. Questo prompt consente di generare cinque diverse interpretazioni della domanda dell'utente da presentare al modello.
+    # Questo approccio permette di superare eventuali errori di battitura o domande poco chiare.
     QUERY_PROMPT = PromptTemplate(
         input_variables=["question"],
         template="""You are an AI language model assistant. Your task is to generate five
